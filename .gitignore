@@ -1,0 +1,9 @@
+.DS_Store
+/.gitconfig/user
+/.build
+xcuserdata/
+/.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+/cmark-gfm.xcframework.zip
+/cmark-gfm.xcframework
+/cmark-gfm-extensions.xcframework.zip
+/cmark-gfm-extensions.xcframework
