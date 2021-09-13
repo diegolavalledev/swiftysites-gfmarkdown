@@ -9,11 +9,11 @@ import CMarkGFMPlus
 /// ## Basic usage
 ///
 /// ```swift
-/// let html = GFMarkdown("# Hello").toHTML()
+/// let html = MarkdownString("# Hello").toHTML()
 /// print(html) // "<h1>Hello</h1>"
 /// ```
 ///
-public struct GFMarkdown {
+public struct MarkdownString {
 
     /// Default CMark options: ``CMarkOption/githubPreLang``, ``CMarkOption/tablePreferStyleAttributes``.
     public static let defaultOptions: [CMarkOption] = [

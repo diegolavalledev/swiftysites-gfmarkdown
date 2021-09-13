@@ -1,6 +1,6 @@
-# ``CMarkGFM``
+# ``GFMarkdown``
 
-Easily render HTML from standard Markdown content.
+Convert GitHub Flavored Markdown to HTML easily with the `@Markdown` property wrapper. Optionally customize every CMark option and GFM extension available.
 
 ## Overview
 
@@ -26,7 +26,23 @@ This implementation is built entirely on top of the amazing [cmark-gfm](https://
 
 ## Basic usage
 
-Simply wrap your Markdown string with ``GFMarkdown`` and call ``GFMarkdown/toHTML(options:extensions:)`` with no parameters.
+Just tag your properties with the ``Markdown`` wrapper.
+
+```swift
+struct Content {
+    @Markdown var body: String
+}
+
+let content = Content(body: "# Hello")
+
+// Automatic HTML conversion.
+print(content.body) // "<h1>Hello</h1>"
+
+// Retrieve the original Markdown.
+print(content.$body) // "# Hello"
+```
+
+Alternativelly wrap your Markdown string with ``MarkdownString`` and call ``MarkdownString/toHTML(options:extensions:)`` with no parameters.
 
 ```swift
 let html = GFMarkdown("# Hello").toHTML()
@@ -37,7 +53,8 @@ print(html) // "<h1>Hello</h1>"
 
 ### Converting Markdown to HTML
 
-- ``GFMarkdown/toHTML(options:extensions:)``
+- ``Markdown``
+- ``MarkdownString/toHTML(options:extensions:)``
 
 ### Specifying options and extensions
 

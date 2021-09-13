@@ -1,12 +1,11 @@
 // swift-tools-version:5.5
 import PackageDescription
 
-let PACKAGE_NAME = "GFMarkdown"
-let ARTIFACT_FRAGMENT = ".build/artifacts/\(PACKAGE_NAME)"
-//let ARTIFACT_FRAGMENT = ""
+let ARTIFACT_FRAGMENT = ".build/artifacts/GFMarkdown"
+let ARTIFACT_FRAGMENT_LOWERCASE = ".build/artifacts/gfmarkdown"
 
 let package = Package(
-    name: PACKAGE_NAME,
+    name: "GFMarkdown",
     products: [
         .library(
             name: "GFMarkdown",
@@ -26,13 +25,21 @@ let package = Package(
             dependencies: ["cmark-gfm", "cmark-gfm-extensions"]
             ,
             cSettings: [
-                .unsafeFlags(["-I\(ARTIFACT_FRAGMENT)/cmark-gfm.xcframework/linux-x86_64/Headers"], .when(platforms: [.linux]))
+                .unsafeFlags([
+                    "-I\(ARTIFACT_FRAGMENT)/cmark-gfm.xcframework/linux-x86_64/Headers",
+                    "-I\(ARTIFACT_FRAGMENT_LOWERCASE)/cmark-gfm.xcframework/linux-x86_64/Headers",
+                ], .when(platforms: [.linux]))
             ],
             linkerSettings: [
-                .unsafeFlags(["-L ../../\(ARTIFACT_FRAGMENT)/cmark-gfm.xcframework/linux-x86_64"],
-                    .when(platforms: [.linux])),
-                .unsafeFlags(["-L ../../\(ARTIFACT_FRAGMENT)/cmark-gfm-extensions.xcframework/linux-x86_64"],
-                    .when(platforms: [.linux])),
+                .unsafeFlags([
+                    "-L ../../\(ARTIFACT_FRAGMENT)/cmark-gfm.xcframework/linux-x86_64",
+                    "-L ../../\(ARTIFACT_FRAGMENT_LOWERCASE)/cmark-gfm.xcframework/linux-x86_64"
+                    ], .when(platforms: [.linux])),
+                .unsafeFlags([
+                    "-L ../../\(ARTIFACT_FRAGMENT)/cmark-gfm-extensions.xcframework/linux-x86_64",
+                    "-L ../../\(ARTIFACT_FRAGMENT_LOWERCASE)/cmark-gfm-extensions.xcframework/linux-x86_64",
+                    ], .when(platforms: [.linux])),
+
                 // Library `cmark-gfm-extensions` needs to be first in order
                 .linkedLibrary(
                     "cmark-gfm-extensions", .when(platforms: [.linux])
@@ -44,7 +51,9 @@ let package = Package(
             name: "GFMarkdown",
             dependencies: [
                 "CMarkGFMPlus"
-            ]
-        )
+            ]),
+        .testTarget(
+            name: "GFMarkdownTests",
+            dependencies: ["GFMarkdown"]),
     ]
 )
