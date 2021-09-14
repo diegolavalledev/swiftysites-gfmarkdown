@@ -9,8 +9,10 @@ import CMarkGFMPlus
 /// ## Basic usage
 ///
 /// ```swift
-/// let html = MarkdownString("# Hello").toHTML()
+/// let markdown = MarkdownString("# Hello")
+/// let html = markdown.toHTML()
 /// print(html) // "<h1>Hello</h1>"
+/// print(markdown.description) // "# Hello"
 /// ```
 ///
 public struct MarkdownString {
@@ -52,5 +54,12 @@ public struct MarkdownString {
 
         defer { free(outString) }
         return String(cString: outString)
+    }
+}
+
+extension MarkdownString: LosslessStringConvertible {
+
+    public var description: String {
+        markdown
     }
 }

@@ -29,17 +29,13 @@ This implementation is built entirely on top of the amazing [cmark-gfm](https://
 Just tag your properties with the ``Markdown`` wrapper.
 
 ```swift
-struct Content {
-    @Markdown var body: String
-}
-
-let content = Content(body: "# Hello")
+@Markdown var content = "# Hello"
 
 // Automatic HTML conversion.
-print(content.body) // "<h1>Hello</h1>"
+print(content) // "<h1>Hello</h1>"
 
 // Retrieve the original Markdown.
-print(content.$body) // "# Hello"
+print($content) // "# Hello"
 ```
 
 Alternativelly wrap your Markdown string with ``MarkdownString`` and call ``MarkdownString/toHTML(options:extensions:)`` with no parameters.
@@ -60,3 +56,7 @@ print(html) // "<h1>Hello</h1>"
 
 - ``CMarkOption``
 - ``GFMExtension``
+
+### Guides
+
+- <doc:Building>
