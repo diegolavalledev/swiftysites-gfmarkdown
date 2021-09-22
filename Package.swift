@@ -6,6 +6,7 @@ let ARTIFACT_FRAGMENT_LOWERCASE = ".build/artifacts/gfmarkdown"
 
 let package = Package(
     name: "GFMarkdown",
+    platforms: [.macOS(.v11)],
     products: [
         .library(
             name: "GFMarkdown",

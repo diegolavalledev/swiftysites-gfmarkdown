@@ -50,7 +50,7 @@ public struct MarkdownString {
         let outString = cmark_gfm_markdown_to_html(markdown, markdown.utf8.count, options.code, &extensions, Int32(extensions.count))!
 
         // Free the duplicated strings:
-        for ptr in extensions { free(ptr) }
+        extensions.compactMap { $0 }.forEach { free($0) }
 
         defer { free(outString) }
         return String(cString: outString)

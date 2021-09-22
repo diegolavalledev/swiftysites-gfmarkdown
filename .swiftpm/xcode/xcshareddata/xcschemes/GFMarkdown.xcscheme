@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CMarkGFMPlus"
-               BuildableName = "CMarkGFMPlus"
-               BlueprintName = "CMarkGFMPlus"
+               BlueprintIdentifier = "GFMarkdown"
+               BuildableName = "GFMarkdown"
+               BlueprintName = "GFMarkdown"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "GFMarkdownTests"
+               BuildableName = "GFMarkdownTests"
+               BlueprintName = "GFMarkdownTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +42,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "GFMarkdown"
-               BuildableName = "GFMarkdown"
-               BlueprintName = "GFMarkdown"
+               BlueprintIdentifier = "CMarkGFMPlus"
+               BuildableName = "CMarkGFMPlus"
+               BlueprintName = "CMarkGFMPlus"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,6 +56,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "GFMarkdownTests"
+               BuildableName = "GFMarkdownTests"
+               BlueprintName = "GFMarkdownTests"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -64,9 +88,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CMarkGFMPlus"
-            BuildableName = "CMarkGFMPlus"
-            BlueprintName = "CMarkGFMPlus"
+            BlueprintIdentifier = "GFMarkdown"
+            BuildableName = "GFMarkdown"
+            BlueprintName = "GFMarkdown"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>
