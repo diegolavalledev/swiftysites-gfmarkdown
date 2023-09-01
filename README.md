@@ -56,11 +56,3 @@ let package = Package(
     …
 )
 ```
-
-# Building
-
-If you would like to compile CMarkGFM from scratch you will first need to download and build `cmark-gfm` as a static library. For more information about how to do this take a look inside [build-cmark-gfm](scripts/build-cmark-gfm.sh).
-
-Copy the `.a` files to the [lib folder](lib) and archive the project following the steps in [generate-xcframework](scripts/generate-xcframework.sh).
-
-The bundle that is ultimatelly generated gets attached to the GitHub release.

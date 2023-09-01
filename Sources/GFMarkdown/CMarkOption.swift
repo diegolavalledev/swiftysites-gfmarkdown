@@ -1,3 +1,4 @@
+import cmark_gfm
 import CMarkGFMPlus
 
 /// CommonMark option values.
